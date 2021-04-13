@@ -3,12 +3,43 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-  <style type="text/css">
-   
-  </style>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
   </head>
+
   <body>
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="src/module.js"></script>
+    <script src="src/modules/leaderboard.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="src/index.js"></script>
+
+    <script>
+      $(function(){
+        $("#getrecent").click(function(){
+          let limit = 100;
+          let projectid = 513651187; // for now, a random project id for testing.
+          $.ajax({
+            url: `https://clouddata.scratch.mit.edu/logs?projectid=${projectid}&limit=${limit}&offset=0`,
+            cache: false,
+            success: function(json){
+              let entries = module.require("parse_leader_entries")(json);
+              for (let i = 0; i < entries.length; i++)
+                $('#leaderboard tr:last').after(`<tr>${i} ${entries.name}</tr>`);
+            }
+          });
+        })
+      })
+    </script>
+    
+    <button id="getrecent">Request Leaderboard</button>
+    </br>
+
+    <table id="leaderboard">
+      <tbody>
+        <tr>
+          sample entry
+        </tr>
+      </tbody>
+    </table>
+
   </body>
 </html>
