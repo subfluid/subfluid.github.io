@@ -19,11 +19,13 @@
           let projectid = 513651187; // for now, a random project id for testing.
           $.ajax({
             url: `https://clouddata.scratch.mit.edu/logs?projectid=${projectid}&limit=${limit}&offset=0`,
+            type: "GET",
+            dataType: "json",
             cache: false,
             success: function(json){
               let entries = module.require("parse_leader_entries")(json);
               for (let i = 0; i < entries.length; i++)
-                $('#leaderboard tr:last').after(`<tr>${i} ${entries.name}</tr>`);
+                $("#leaderboard tr:last").after(`<tr>${i} ${entries.name}</tr>`);
             }
           });
         })
