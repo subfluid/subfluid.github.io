@@ -43,6 +43,7 @@ let update_table = function(){
           row.insertCell().innerHTML = entry.user;
           row.insertCell().innerHTML = entry.stats[1]
           row.insertCell().innerHTML = calculate_accuracy(entry.stats);
+          row.insertCell().innerHTML = ((+entry.stats[9])/1000).toFixed(3)+"x";
           for (let j = 2; j < 9; j++)
           {
             let cell = row.insertCell();
