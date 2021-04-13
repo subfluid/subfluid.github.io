@@ -1,0 +1,36 @@
+body {
+  background-color: #cccccc;
+}
+
+.leader-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: Montserrat;
+  min-width: 400px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 6px 5px 0 0;
+  overflow: hidden;
+}
+
+.leader-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.leader-table th,
+.leader-table td {
+    padding: 12px 15px;
+}
+.leader-table tbody tr {
+  border-bottom: 4px solid #dddddd;
+  background-color: #f2f2f2;
+}
+
+.leader-table tbody tr:nth-of-type(even) {
+  background-color: #e8e8e8;
+}
+
+.leader-table tbody tr:last-of-type {
+  border-bottom: 4px solid #009879;
+}

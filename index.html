@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <title>PolyRhythm Stats</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 
   <body>
@@ -12,36 +12,77 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <script src="src/index.js"></script>
 
-    <script>
-      $(function(){
-        $("#getrecent").click(function(){
-          let limit = 100;
-          let projectid = 513651187; // for now, a random project id for testing.
-          $.ajax({
-            url: `https://cors-everywhere.herokuapp.com/https://clouddata.scratch.mit.edu/logs?projectid=${projectid}&limit=${limit}&offset=0`,
-            type: "GET",
-            dataType: "json",
-            cache: false,
-            xhrFields: { withCredentials: true },
-            success: function(json){
-              let entries = module.require("parse_leader_entries")(json);
-              for (let i = 0; i < entries.length; i++)
-                $("#leaderboard tr:last").after(`<tr>${i} ${entries.name}</tr>`);
-            }
-          });
-        })
-      })
-    </script>
+    <script></script>
     
     <button id="getrecent">Request Leaderboard</button>
     </br>
 
-    <table id="leaderboard">
-      <tbody>
-        <tr>
-          sample entry
-        </tr>
-      </tbody>
+    <table id="leaderboard" class="leader-table">
+        <thead>
+            <tr>
+                <th>Level ID</th>
+                <th>Timestamp</th>
+                <th>Username</th>
+                <th>Score</th>
+                <th>Epic+</th>
+                <th>Epic</th>
+                <th>Cool</th>
+                <th>Okay</th>
+                <th>Bad</th>
+                <th>Miss</th>
+                <th>MAX</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>Apr 13 04:28:00</td>
+                <td>subfluid</td>
+                <td>999,999</td>
+                <td>1024</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Apr 12 04:28:00</td>
+                <td>subfluid</td>
+                <td>999,999</td>
+                <td>1024</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Apr 12 04:28:00</td>
+                <td>subfluid</td>
+                <td>999,999</td>
+                <td>1024</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Apr 12 04:28:00</td>
+                <td>subfluid</td>
+                <td>999,999</td>
+                <td>1024</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
     </table>
 
   </body>
