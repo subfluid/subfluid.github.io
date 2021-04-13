@@ -18,7 +18,7 @@
           let limit = 100;
           let projectid = 513651187; // for now, a random project id for testing.
           $.ajax({
-            url: `https://clouddata.scratch.mit.edu/logs?projectid=${projectid}&limit=${limit}&offset=0`,
+            url: `https://cors-everywhere.herokuapp.com/https://clouddata.scratch.mit.edu/logs?projectid=${projectid}&limit=${limit}&offset=0`,
             type: "GET",
             dataType: "json",
             cache: false,
