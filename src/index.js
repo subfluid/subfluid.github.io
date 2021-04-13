@@ -18,7 +18,7 @@ let calculate_accuracy = function(stats){
 
 let update_table = function(){
   let limit = 100;
-  let projectid = 514929906; // for now, a random project id for testing.
+  let projectid = 456999999; // for now, a random project id for testing.
   $.ajax({
     // bless cors-everywhere
     url: `https://cors-everywhere.herokuapp.com/https://clouddata.scratch.mit.edu/logs?projectid=${projectid}&limit=${limit}&offset=0`,
