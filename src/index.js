@@ -1,10 +1,14 @@
 
 
 
+function numAddCommas(x) {
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); // regex magic
+}
+
+let weights = [1, 1, 2/3, 1/3, 1/6, 0];
 let calculate_accuracy = function(stats){
   let weight = 0;
   let total = 0;
-  let weights = [1, 1, 2/3, 1/3, 1/6, 0];
   for (let i = 0; i < 6; i++)
   {
     let count = +stats[i+2];
@@ -15,6 +19,7 @@ let calculate_accuracy = function(stats){
   return str;
 }
 
+// update table through http request to https://clouddata.scratch.mit.edu/
 let update_table = function(){
   let limit = 100;
   let projectid = 456999999; // for now, a random project id for testing.
@@ -38,13 +43,13 @@ let update_table = function(){
           row.insertCell().innerHTML = entry.stats[0];
           row.insertCell().innerHTML = new Date(entry.timestamp).toUTCString();
           row.insertCell().innerHTML = entry.user;
-          row.insertCell().innerHTML = entry.stats[1]
+          row.insertCell().innerHTML = numAddCommas(entry.stats[1]);
           row.insertCell().innerHTML = calculate_accuracy(entry.stats);
           row.insertCell().innerHTML = ((+entry.stats[9])/1000).toFixed(3)+"x";
           for (let j = 2; j < 9; j++)
           {
             let cell = row.insertCell();
-            cell.innerHTML = entry.stats[j];
+            cell.innerHTML = numAddCommas(entry.stats[j]);
           }
         }
       }
