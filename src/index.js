@@ -42,7 +42,7 @@ let update_table = function(){
           let row = body.insertRow();
           row.insertCell().innerHTML = entry.stats[0];
           row.insertCell().innerHTML = new Date(entry.timestamp).toUTCString();
-          row.insertCell().innerHTML = entry.user;
+          row.insertCell().innerHTML = `<a href="https://scratch.mit.edu/users/${entry.user}" class="scratchuser" target="_blank" rel="noopener noreferrer">` + entry.user + `</a>`;
           row.insertCell().innerHTML = numAddCommas(entry.stats[1]);
           row.insertCell().innerHTML = calculate_accuracy(entry.stats);
           row.insertCell().innerHTML = ((+entry.stats[9])/1000).toFixed(3)+"x";

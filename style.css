@@ -18,15 +18,21 @@ body {
   color: #ffffff;
   text-align: left;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+  padding: 8px 14px;
 }
 .leader-table th,
 .leader-table td {
-    padding: 10px 14px;
+  padding: 8px 14px;
 }
 .leader-table tbody tr {
   border-bottom: 4px solid #343434;
   color: #d0d0d0;
   background-color: #252525;
+}
+.leader-table tbody tr:hover {
+  color: #ffffff;
+  background-color: #252525;
+  transition: all 0.25s;
 }
 
 .leader-table tbody tr:nth-of-type(even) {
@@ -35,6 +41,15 @@ body {
 
 .leader-table tbody tr:last-of-type {
   border-bottom: 4px solid #4e74f1;
+}
+
+a.scratchuser {
+  color: inherit;
+  text-shadow: 0 0 0.35em rgba(255, 255, 255, 0.5);
+  transition: all 0.2s;
+}
+a.scratchuser:hover{
+  color: rgba(255,255,0,1);
 }
 
 a.button {
