@@ -12,7 +12,6 @@ let calculate_accuracy = function(stats){
     total+=count;
   }
   let str = `${(weight/total*100).toFixed(2)}%`;
-  console.log("acc: " + str);
   return str;
 }
 
@@ -26,9 +25,7 @@ let update_table = function(){
     dataType: "json",
     cache: false,
     success: function(res){
-      console.log(res);
       let entries = module.require("parse_leader_entries")(res);
-      console.log(entries.length);
       let table = document.getElementById("leaderboard");
       let body = table.getElementsByTagName("tbody")[0];
       $("#leaderboard tbody tr").remove();

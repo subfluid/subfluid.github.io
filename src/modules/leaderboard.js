@@ -35,7 +35,6 @@ let parse_leader_entries = function(json)
       }
       cumulative += (num-1);
     }
-    console.log("length = " + score.stats.length);
     entries.push(score);
   }
   return entries;
